@@ -1,11 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import fetchContacts from './actions/fetchContacts';
 
 class App extends React.Component {
 
   componentDidMount() {
-    fetch('http://127.0.0.1:3000/api/v1/contacts')
-    .then(resp => resp.json())
-    .then(responseData => console.log(responseData))
+    this.props.fetchContacts()
 }
 
 
@@ -19,4 +19,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+
+
+
+export default connect(null, {fetchContacts}) (App);
