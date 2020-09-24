@@ -1,25 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import fetchContacts from './actions/fetchContacts';
+// import {connect} from 'react-redux';
+import ContactsContainer from './containers/ContactsContainer';
+
 
 class App extends React.Component {
-
-  componentDidMount() {
-    this.props.fetchContacts()
-}
-
-
 
   render() {
     return (
       <div className="App">
-        App
+        <ContactsContainer />
       </div>
     );
   }
 }
 
-
-
-
-export default connect(null, {fetchContacts}) (App);
+export default App;

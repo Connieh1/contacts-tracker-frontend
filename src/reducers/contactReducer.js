@@ -1,4 +1,11 @@
+
+
 export default function contactReducer(state = {contacts: []}, action) {
 
-  return state
+  switch (action.type) {
+    case 'FETCH_CONTACTS':
+      return {contacts: action.payload}
+    default:
+      return state
+  }
 }
