@@ -10,10 +10,10 @@ export const addContact = (data) => {
     method: 'POST',
     body: JSON.stringify(data)
   })
-  // .then(resp => resp.json())
-  // .then(contacts => dispatch({
-  //   type: 'FETCH_CONTACTS',
-  //   payload: contacts
-  // }))
+  .then(resp => resp.json())
+  .then(contact => dispatch({
+    type: 'ADD_CONTACT',
+    payload: contact
+  }))
   }
 }
