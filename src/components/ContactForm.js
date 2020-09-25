@@ -3,7 +3,12 @@ import {connect} from 'react-redux';
 import {addContact} from '../actions/addContact'
 
 class ContactForm extends React.Component {
-  state = {name: '', company: '', category: ''}
+
+  state = {
+    name: '',
+    company: '',
+    category: ''
+  }
 
   handleChange = (e) => {
     this.setState({
@@ -14,6 +19,11 @@ class ContactForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.addContact(this.state)
+    this.setState({
+      name: '',
+      company: '',
+      category: ''
+    })
   }
 
   render() {
