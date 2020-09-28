@@ -1,21 +1,22 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
+import InteractionsContainer from '../containers/InteractionsContainer';
 
 
 const Contact = (props) => {
   console.log(props)
 
-  let contact = props.contacts[props.match.params.id-1]
+  let contact = props.contacts[props.match.params.id - 1]
+  // let contact = props.contact.filter(contact => contact.id == props.match.params.id)[0]
 
   return(
-    <li>
-      {contact ?
-      <strong>contact.name</strong> : null} -
-      {contact ?
-      `Company: contact.company` : null }-
-      {contact ?
-      `Type: contact.category`  : null }
-
-    </li>
+    <div>
+      <h2>
+        {contact ?
+        <strong>{contact.name}</strong> : null} - {contact ? contact.company : null} - {contact ? contact.category :null}
+      </h2>
+      <InteractionsContainer contact={contact} />
+    </div>
   )
 }
 

@@ -1,17 +1,17 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import Contact from './Contact';
 
 
 const Contacts = (props) => {
-  return(
+  return (
     <div>
       {props.contacts.map(contact =>
-        <React.Fragment key={contact.id}>
-          <Contact contact={contact}/>
-        </React.Fragment>)}
-        <Route path='./contacts/:id' render={() => <Contact contact={props.contact}/>}/>
+        <li key={contact.id}>
+          <Link to={`/contacts/${contact.id}`}>{contact.name} - {contact.company} - {contact.category}</Link>
+        </li> )}
     </div>
+
   );
 }
 
