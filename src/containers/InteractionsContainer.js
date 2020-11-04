@@ -1,12 +1,12 @@
 import React from 'react';
-import InteractionsForm from '../components/InteractionsForm';
+import InteractionForm from '../components/InteractionForm';
 import Interactions from '../components/Interactions';
 
 class InteractionsContainer extends React.Component {
   render() {
     return(
       <div>
-        <InteractionsForm/>
+        <InteractionForm contact={this.props.contact}/>
         <Interactions interactions={this.props.contact && this.props.contact.interactions}/>
       </div>
     );
