@@ -1,7 +1,8 @@
 import React from 'react';
-// import {connect} from 'react-redux';
+import {connect} from 'react-redux';
+import {fetchContacts} from './actions/fetchContacts'
 import ContactsContainer from './containers/ContactsContainer';
-
+import Contacts from './components/Contacts'
 
 class App extends React.Component {
 
@@ -14,4 +15,6 @@ class App extends React.Component {
   }
 }
 
-export default App;
+
+
+export default connect(null, {fetchContacts})(App);

@@ -11,7 +11,7 @@ const handleDelete = (interaction) => {
   return(
     <div>
       {props.interactions && props.interactions.map(interaction =>
-        <li key={interaction.id}>{interaction.date}<br/> {interaction.description}<br/> {interaction.notes} <button onClick={() => handleDelete(interaction)}>Delete</button><br/></li>
+        <li className="list-group-item" key={interaction.id}>{interaction.date}<br/> {interaction.description}<br/> {interaction.notes} <button onClick={() => handleDelete(interaction)}>Delete</button><br/></li>
       )}
     </div>
   );

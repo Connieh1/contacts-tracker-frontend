@@ -7,6 +7,8 @@ class ContactForm extends React.Component {
   state = {
     name: '',
     company: '',
+    telephone: '',
+    email: '',
     category: ''
   }
 
@@ -21,8 +23,10 @@ class ContactForm extends React.Component {
     this.props.addContact(this.state)
     this.setState({
       name: '',
+      telephone: '',
+      email: '',
       company: '',
-      category: ''
+      category: 'Personal'
     })
   }
 
@@ -30,12 +34,23 @@ class ContactForm extends React.Component {
     return(
       <div>
         <form  onSubmit={this.handleSubmit} >
+          <label>Category:</label>
+          <select name="category" value={this.state.category} onChange={this.handleChange}>
+            <option>Personal</option>
+            <option>Client</option>
+            <option>Profesional</option>
+            <option>Other</option>
+          </select>
           <label>Contact Name: </label>
           <input type='text' name='name' placeholder='Name' value={this.state.name} onChange={this.handleChange} /><br/><br/>
+          <label>Telephone: </label>
+          <input type='text' name='telephone' placeholder='Telephone' value={this.state.telephone} onChange={this.handleChange} /><br/><br/>
+          <label>Email: </label>
+          <input type='text' name='email' placeholder='Email' value={this.state.email} onChange={this.handleChange} /><br/><br/>
           <label>Contact's Company: </label>
           <input type='text' name='company' placeholder='Company' value={this.state.company} onChange={this.handleChange} /><br/><br/>
-          <label>Contact Type: </label>
-          <input type='text' name='category' placeholder='Contact Type (eg. Personal, Client, Professional)' value={this.state.type} onChange={this.handleChange} /><br/>
+          {/*<label>Contact Type: </label>
+           <input type='text' name='category' placeholder='Contact Type (eg. Personal, Client, Professional)' value={this.state.type} onChange={this.handleChange} /><br/>*/}
           <input type='submit'/>
         </form>
       </div>

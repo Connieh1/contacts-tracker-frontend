@@ -5,6 +5,8 @@ import {fetchContacts} from '../actions/fetchContacts';
 import Contacts from '../components/Contacts';
 import Contact from '../components/Contact';
 import ContactForm from '../components/ContactForm';
+import NavBar from '../components/NavBar';
+import ContactsCards from '../components/ContactsCards'
 
 
 class ContactsContainer extends React.Component {
@@ -16,11 +18,13 @@ class ContactsContainer extends React.Component {
   render() {
     return(
       <div>
+        <NavBar />
         <Switch>
-          <Route path='/contacts/new' component={ContactForm}/>
-          <Route path='/contacts/:id' render={(routerProps) => <Contact {...routerProps} contacts={this.props.contacts}/>}/>
-          <Route path='/contacts' render={(routerProps) => <Contacts {...routerProps} contacts={this.props.contacts} />} />
+          <Route exact path='/contacts/new' component={ContactForm}/>
+          <Route exact path='/contacts/:id' render={(routerProps) => <Contact {...routerProps} contacts={this.props.contacts} />} />
+          <Route exact path='/contacts' render={(routerProps) => <Contacts {...routerProps} contacts={this.props.contacts} />} />
         </Switch>
+        <Route exact path='/' component={ContactsCards}/>
       </div>
     )
   }

@@ -4,6 +4,6 @@ export const deleteContact = (contactId) => {
       method: 'DELETE'
     })
     .then(response => response.json())
-    .then(contact => dispatch({type: 'DELETE_CONTACT', payload: contact}))
+    .then(contact => dispatch({type: 'DELETE_CONTACT', payload: contact.id}))
   }
 }
