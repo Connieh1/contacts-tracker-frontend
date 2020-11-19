@@ -1,5 +1,6 @@
 export const addInteraction = (interaction, contactId) => {
 
+
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/contacts/${contactId}/interactions`, {
       method: 'POST',
