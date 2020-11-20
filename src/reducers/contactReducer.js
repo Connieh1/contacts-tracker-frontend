@@ -33,17 +33,17 @@ export default function contactReducer(state = {contacts: []}, action) {
         }
       })
       return {...state, contacts: contacts3}
-    // case 'DELETE_CONTACT':
-    //   let contacts4 = state.contacts.map(contact => {
-    //     if (contact.id === action.payload.id) {
-    //       // return action.payload
-    //       return { contacts: state.contacts.filter((_, i) => i !== action.payload) }
-    //     }else{
-    //       return contact
-    //     }
-    //   })
-    //   // return { contacts: state.contacts.filter((_, i) => i !== action.payload) }
-    //   return {...state, contacts: contacts4}
+    case 'DELETE_CONTACT':
+      let contacts4 = state.contacts.map(contact => {
+        if (contact.id === action.payload.id) {
+          // return action.payload
+          return { contacts: state.contacts.filter((_, i) => i !== action.payload) }
+        }else{
+          return contact
+        }
+      })
+      // return { contacts: state.contacts.filter((_, i) => i !== action.payload) }
+      return {...state, contacts: contacts4}
     default:
       return state
   }

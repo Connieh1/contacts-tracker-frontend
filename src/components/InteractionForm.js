@@ -31,7 +31,7 @@ class InteractionForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>Date:</label>
-          <input type="datetime" placeholder="Date" name="date" value={this.state.date} onChange={this.handleChange}/>
+          <input type="datetime" placeholder="YYYY/MM/DD" name="date" value={this.state.date} onChange={this.handleChange}/>
           <label>Description: </label>
           <input type="textArea" placeholder="What was discussed?" name="description" value={this.state.description} onChange={this.handleChange}/>
           <label>Notes: </label>

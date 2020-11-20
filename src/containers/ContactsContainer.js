@@ -5,7 +5,8 @@ import {fetchContacts} from '../actions/fetchContacts';
 import Contacts from '../components/Contacts';
 import Contact from '../components/Contact';
 import ContactForm from '../components/ContactForm';
-import NavBar from '../components/NavBar';
+// import NavBar from '../components/NavBar';
+import Header from '../components/Header';
 import ContactsCards from '../components/ContactsCards'
 
 
@@ -18,13 +19,16 @@ class ContactsContainer extends React.Component {
   render() {
     return(
       <div>
-        <NavBar />
-        <Switch>
-          <Route exact path='/contacts/new' component={ContactForm}/>
-          <Route exact path='/contacts/:id' render={(routerProps) => <Contact {...routerProps} contacts={this.props.contacts} />} />
-          <Route exact path='/contacts' render={(routerProps) => <Contacts {...routerProps} contacts={this.props.contacts} />} />
-        </Switch>
-        <Route exact path='/' component={ContactsCards}/>
+       {/*} <NavBar /> */}
+        <Header title="Contacts Tracker"/>
+        {/*// <Switch>
+        //   <Route exact path='/contacts/new' component={ContactForm}/>
+        //   <Route exact path='/contacts/:id' render={(routerProps) => <Contact {...routerProps} contacts={this.props.contacts} />} />
+        //   <Route exact path='/contacts' render={(routerProps) => <Contacts {...routerProps} contacts={this.props.contacts} />} />
+        // </Switch>
+        // <Route exact path='/' component={ContactsCards}/>}
+        // <Route exact path='/contacts' render={(routerProps) => <Contact {...routerProps} contacts={this.props.contacts} />} />*/}
+        <Route exact path='/' render={(routerProps) => <Contact {...routerProps} contacts={this.props.contacts} />} />
       </div>
     )
   }

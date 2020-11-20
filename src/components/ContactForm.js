@@ -9,7 +9,7 @@ class ContactForm extends React.Component {
     company: '',
     telephone: '',
     email: '',
-    category: ''
+    category: 'Personal'
   }
 
   handleChange = (e) => {
