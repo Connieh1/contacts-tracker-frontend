@@ -9,6 +9,7 @@ class ContactForm extends React.Component {
     telephone: "",
     email: "",
     category: "Personal",
+    errors: {},
   };
 
   handleChange = (e) => {
@@ -28,6 +29,21 @@ class ContactForm extends React.Component {
       category: "Personal",
     });
 
+    if (this.state.name === "") {
+      this.setState({ errors: { name: "Name is required" } });
+      return;
+    }
+
+    if (this.state.email === "") {
+      this.setState({ errors: { email: "Email is required" } });
+      return;
+    }
+
+    if (this.state.telephone === "") {
+      this.setState({ errors: { phone: "Phone is required" } });
+      return;
+    }
+
     this.props.history.push("/contacts");
   };
 
@@ -43,7 +59,7 @@ class ContactForm extends React.Component {
           >
             <option>Personal</option>
             <option>Client</option>
-            <option>Profesional</option>
+            <option>Professional</option>
             <option>Other</option>
           </select>
           <label>Contact Name: </label>

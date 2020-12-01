@@ -37,8 +37,10 @@ class InteractionForm extends React.Component {
             value={this.state.date}
             onChange={this.handleChange}
           />
-          <label>Description: </label>
-          <input
+          <label>
+            <strong> Description: </strong>
+          </label>
+          <textarea
             type="text"
             placeholder="What was discussed?"
             name="description"
@@ -46,9 +48,12 @@ class InteractionForm extends React.Component {
             onChange={this.handleChange}
             style={{ backgroundImage: "none" }}
           />
-          <label>Notes: </label>
-          <input
-            type="textArea"
+          {"  "}
+          <label>
+            <strong> Notes: </strong>
+          </label>
+          <textarea
+            type="text"
             placeholder="Notes"
             name="notes"
             value={this.state.notes}

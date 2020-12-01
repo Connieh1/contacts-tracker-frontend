@@ -5,11 +5,12 @@ import { editContact } from "../actions/editContact";
 class ContactEdit extends React.Component {
   state = {
     name: "",
+    email: "",
+    telephone: "",
     company: "",
-    category: "",
   };
   //conditional rendering state vs. props
-  componentWillReceiveProps(nextProps, nextState) {
+  UNSAFE_componentWillReceiveProps(nextProps, nextState) {
     const { name, email, telephone, company } = nextProps.contact;
     this.setState({
       name,
@@ -48,7 +49,7 @@ class ContactEdit extends React.Component {
           >
             <option>Personal</option>
             <option>Client</option>
-            <option>Profesional</option>
+            <option>Professional</option>
             <option>Other</option>
           </select>
           <label>Contact Name: </label>
@@ -71,7 +72,7 @@ class ContactEdit extends React.Component {
           />
           <br />
           <br />
-          <label>Contact Name: </label>
+          <label>Contact Email: </label>
           <input
             type="email"
             name="email"
