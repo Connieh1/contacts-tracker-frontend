@@ -2,11 +2,6 @@
 
 > React-Redux frontend for a contacts interaction tracker application. Backend: https://github.com/Connieh1/contacts-tracker-backend
 
-##Built With
-create-react-app
-React
-Redux
-NPM
 
 ## Installation
 
@@ -20,6 +15,12 @@ $ npm install --save contacts-tracker-frontend
 var contactsTrackerFrontend = require('contacts-tracker-frontend');
 contactsTrackerFrontend();
 ```
+
+## Built With
+create-react-app
+React
+Redux
+NPM
 
 ## License
 
