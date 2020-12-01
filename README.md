@@ -2,7 +2,7 @@
 
 > React-Redux frontend for a contacts interaction tracker application. Backend: https://github.com/Connieh1/contacts-tracker-backend
 
-#Built With
+##Built With
 create-react-app
 React
 Redux
