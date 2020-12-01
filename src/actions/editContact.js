@@ -1,15 +1,15 @@
 export const editContact = (data) => {
   return (dispatch) => {
+    console.log(data);
     fetch(`http://localhost:3000/api/v1/contacts/${data.id}`, {
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      method: 'PATCH',
-      body: JSON.stringify(data)
+      method: "PATCH",
+      body: JSON.stringify(data),
     })
-    .then(response => response.json())
-    .then(contact => dispatch({type: 'EDIT_CONTACT', payload: contact}))
-  }
-
-}
+      .then((response) => response.json())
+      .then((contact) => dispatch({ type: "EDIT_CONTACT", payload: contact }));
+  };
+};
