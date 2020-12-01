@@ -2,29 +2,36 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import Contact from "./Contact";
 
-const Contacts = (props) => {
-  // const { contacts } = this.props;
+class Contacts extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div>
-      {props.contacts.map((contact) => (
-        <li className="list-group-item" key={contact.id}>
-          <Link to={`/contacts/${contact.id}`}>
-            {contact.name} - {contact.company} - {contact.category}
-          </Link>
-        </li>
-      ))}
-    </div>
+    this.state = {};
+  }
 
-    // <React.Fragment>
-    //   <h1 className="display-4 mb-2">
-    //     <span className="text-danger">Contact</span> List
-    //   </h1>
-    //   {contacts.map((contact) => (
-    //     <Contact key={contact.id} contact={contact} />
-    //   ))}
-    // </React.Fragment>
-  );
-};
+  handleClick = (id) => () => {
+    this.setState((prevState) => ({
+      [id]: prevState[id] ? prevState[id] - 1 : 1,
+    }));
+  };
+
+  render() {
+    return (
+      <div>
+        {this.props.contacts.map((contact) => (
+          <li className="list-group-item" key={contact.id}>
+            <Link to={`/contacts/${contact.id}`}>
+              {contact.name} - {contact.company} - {contact.category}
+            </Link>
+            {"  "}
+            <button key={contact.id} onClick={this.handleClick(contact.id)}>
+              Vote: {this.state[contact.id] || 0}
+            </button>
+          </li>
+        ))}
+      </div>
+    );
+  }
+}
 
 export default Contacts;
