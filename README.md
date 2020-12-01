@@ -17,10 +17,11 @@ contactsTrackerFrontend();
 ```
 
 ## Built With
-create-react-app
-React
-Redux
-NPM
+create-react-app <br />
+React <br />
+Redux <br />
+CSS <br />
+HTML
 
 ## License
 
